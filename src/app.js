@@ -3,6 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
+const time = require('./utils/time');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -77,7 +78,15 @@ app.get('/weather', (req, res) => {
                     forecastData.current_temp +
                     ' degrees. There is a ' +
                     forecastData.precip_prop +
-                    '% chance of rain.';
+                    '% chance of rain. The high will be ' +
+                    forecastData.tempHigh +
+                    ' with a low of ' +
+                    forecastData.tempLow +
+                    ' degrees. Sunrise is at ' +
+                    time.getFormattedTime(forecastData.sunriseTime) +
+                    ' with a sunset at ' +
+                    time.getFormattedTime(forecastData.sunsetTime) +
+                    '.';
                 res.send({
                     forecast: theForecast,
                     location, // shorthand for location: location

@@ -2,13 +2,17 @@ const request = require('request');
 
 const geocode = (address, callback) => {
     // Geocoding Access Token and URL
-    const GEOCODING_ACCESS_TOKEN =
-        'pk.eyJ1IjoiZGVhbDQ3NDciLCJhIjoiY2p4MmdwZmYwMDBkbTQ5azQ1ZG9mc3Y2NCJ9.4fYsv8nHktDEwHVirX4Bxg';
+    if (!process.env.GEOCODING_ACCESS_TOKEN) {
+        return callback(
+            'Unable to connect to the location service. GEOCODING_ACCESS_TOKEN is not defined.',
+            undefined
+        );
+    }
     const url =
         'https://api.mapbox.com/geocoding/v5/mapbox.places/' +
         encodeURIComponent(address) +
         '.json?access_token=' +
-        GEOCODING_ACCESS_TOKEN +
+        process.env.GEOCODING_ACCESS_TOKEN +
         '&limit';
 
     request({ url, json: true }, (error, { body }) => {
