@@ -9,4 +9,4 @@ Course (3rd Edition)" course.
 nodemon src/app.js -e js,hbs
 ```
 
-Then navigate to: http://localhost:8080
+Then navigate to: http://localhost:3000
