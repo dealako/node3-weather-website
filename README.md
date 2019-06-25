@@ -10,7 +10,7 @@ Course (3rd Edition)" course.
 nodemon src/app.js -e js,hbs
 
 # or simply (defined in `package.json`)
-npm run dev
+yarn run dev
 ```
 
 Then navigate to: http://localhost:3000
