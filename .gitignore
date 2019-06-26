@@ -86,3 +86,7 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# Jetbrains IDEA/IntelliJ
+.idea/
+*.iml
