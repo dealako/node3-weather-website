@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js -e js,hbs",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "hbs": "^4.0.4",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.25",
     "request": "^2.88.0"
   },
   "devDependencies": {

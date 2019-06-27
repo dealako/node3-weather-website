@@ -33,7 +33,8 @@ const forecast = (lat, lon, callback) => {
                 sunriseTime: body.daily.data[0].sunriseTime,
                 sunsetTime: body.daily.data[0].sunsetTime,
                 current_temp: body.currently.temperature,
-                precip_prop: body.currently.precipProbability
+                precip_prop: body.currently.precipProbability,
+                timezone: body.timezone
             });
         }
     });

@@ -83,9 +83,9 @@ app.get('/weather', (req, res) => {
                     ' with a low of ' +
                     forecastData.tempLow +
                     ' degrees. Sunrise is at ' +
-                    time.getFormattedTime(forecastData.sunriseTime) +
+                    time.getFormattedTime(forecastData.sunriseTime, forecastData.timezone) +
                     ' with a sunset at ' +
-                    time.getFormattedTime(forecastData.sunsetTime) +
+                    time.getFormattedTime(forecastData.sunsetTime, forecastData.timezone) +
                     '.';
                 res.send({
                     forecast: theForecast,
